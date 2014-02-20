@@ -17,7 +17,7 @@ Add as middleware to your already SPDY-enabled Express server:
     app.use(spdyPush.referrer());
 
 If using the `express.static` or other resource serving middleware, the `spdy-referrer-push` middleware must appear
-_before_ those in the stack.
+_before_ those other middleware in the stack.
 
 That's it!
 
