@@ -1,0 +1,38 @@
+{
+  "name": "spdy-referrer-push",
+  "version": "0.0.1",
+  "description": "SPDY server push based on referrer headers",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui tdd --growl --reporter spec test/*.test.js"
+  },
+  "dependencies": {
+    "debug": "*",
+    "express": ">=3.1.2",
+    "spdy": ">=1.19.3"
+  },
+  "devDependencies": {
+    "deferred": "~0.6.8",
+    "memory-streams": ">=0.0.3",
+    "mocha": "~1.17.1",
+    "should": "~3.1.2",
+    "supertest": "~0.9.0"
+  },
+  "engines": [
+    "node >= 0.10.0"
+  ],
+  "keywords": [
+    "spdy",
+    "http2"
+  ],
+  "author": "Halvard Skogsrud",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halvards/spdy-referrer-push.git"
+  },
+  "homepage": "https://github.com/halvards/spdy-referrer-push",
+  "issues": {
+    "url": "https://github.com/halvards/spdy-referrer-push/issues"
+  }
+}
