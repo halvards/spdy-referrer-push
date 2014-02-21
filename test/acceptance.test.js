@@ -8,7 +8,7 @@ var spdyPush = require('../lib/referrer-push')
   , http = require('http')
   , https = require('https')
   , should = require('should')
-  , streams = require('memory-streams')
+  , streamBuffers = require('stream-buffers')
   , deferred = require('deferred');
 
 var sendRequest = function(agent, path, headers) {
@@ -61,10 +61,10 @@ var testPushStreams = function(options, done) {
     rejectUnauthorized: false
   });
   var pushedResources = {
-    '/style.css': { complete: deferred(), content: new streams.WritableStream() },
-    '/script.js': { complete: deferred(), content: new streams.WritableStream() },
-    '/black_square.png': { complete: deferred(), content: new streams.WritableStream() },
-    '/blue_square.png': { complete: deferred(), content: new streams.WritableStream() }
+    '/style.css': { complete: deferred(), content: new streamBuffers.WritableStreamBuffer() },
+    '/script.js': { complete: deferred(), content: new streamBuffers.WritableStreamBuffer() },
+    '/black_square.png': { complete: deferred(), content: new streamBuffers.WritableStreamBuffer() },
+    '/blue_square.png': { complete: deferred(), content: new streamBuffers.WritableStreamBuffer() }
   };
   agent.on('push', function (stream) {
     var pushedResource = pushedResources[stream.url];
@@ -86,10 +86,10 @@ var testPushStreams = function(options, done) {
     .then(pushedResources['/blue_square.png'].complete.promise)
     .then(function () {
       agent.close();
-      pushedResources['/style.css'].content.toBuffer().should.have.length(53);
-      pushedResources['/script.js'].content.toBuffer().should.have.length(32);
-      pushedResources['/black_square.png'].content.toBuffer().should.have.length(1165);
-      pushedResources['/blue_square.png'].content.toBuffer().should.have.length(1165);
+      pushedResources['/style.css'].content.getContents().should.have.length(53);
+      pushedResources['/script.js'].content.getContents().should.have.length(32);
+      pushedResources['/black_square.png'].content.getContents().should.have.length(1165);
+      pushedResources['/blue_square.png'].content.getContents().should.have.length(1165);
       pushedResources['/style.css']['content-type'].should.equal('text/css');
       pushedResources['/script.js']['content-type'].should.equal('application/javascript');
       pushedResources['/black_square.png']['content-type'].should.equal('image/png');

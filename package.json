@@ -16,7 +16,8 @@
     "memory-streams": ">=0.0.3",
     "mocha": "~1.17.1",
     "should": "~3.1.2",
-    "supertest": "~0.9.0"
+    "supertest": "~0.9.0",
+    "stream-buffers": "~0.2.5"
   },
   "engines": [
     "node >= 0.10.0"
