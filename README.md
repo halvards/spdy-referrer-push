@@ -1,4 +1,4 @@
-# Referrer-based SPDY server push for ExpressJS
+# Referrer-based SPDY server push for ExpressJS  [![Build Status](https://travis-ci.org/halvards/spdy-referrer-push.png)](https://travis-ci.org/halvards/spdy-referrer-push)
 
 ExpressJS middleware for SPDY server push based on referrer headers.
 
@@ -116,10 +116,11 @@ you back to the problem of keeping the list of resources in sync between the Nod
 
 ## To Do
 
-* Setup Travis CI build.
+* ~~Setup Travis CI build.~~
 * The "internal" request and response objects should support the full [Stream API](http://nodejs.org/api/stream.html),
   including all optional arguments.
 * Compare referrer header based on scheme + hostname + port rather than just hostname + port.
 * Support for the `trust proxy` Express [application setting](http://expressjs.com/api.html#app-settings).
 * Improved configurability to match the [Jetty API](http://download.eclipse.org/jetty/stable-9/apidocs/org/eclipse/jetty/spdy/server/http/ReferrerPushStrategy.html).
+* General code cleanup
 * Allow for use with plain Connect (without Express).
