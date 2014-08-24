@@ -12,8 +12,9 @@ var spdyPush = require('../lib/referrer-push')
   , deferred = require('deferred');
 
 var sendRequest = function(agent, path, headers) {
-  if (!headers) headers = {};
+  headers = headers || {};
   var defer = deferred();
+
   http.request({
     host: agent.options.host,
     port: agent.options.port,
@@ -95,5 +96,5 @@ var testPushStreams = function(options, done) {
       pushedResources['/black_square.png']['content-type'].should.equal('image/png');
       pushedResources['/blue_square.png']['content-type'].should.equal('image/png');
       done();
-    });
+    }).done();
 }
