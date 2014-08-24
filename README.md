@@ -124,3 +124,8 @@ you back to the problem of keeping the list of resources in sync between the Nod
 * Improved configurability to match the [Jetty API](http://download.eclipse.org/jetty/stable-9/apidocs/org/eclipse/jetty/spdy/server/http/ReferrerPushStrategy.html).
 * General code cleanup
 * Allow for use with plain Connect (without Express).
+
+## Contributors
+
+* [Halvard Skogsrud](https://github.com/halvards)
+* [Michael Leaney](https://github.com/leahciMic)

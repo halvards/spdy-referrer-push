@@ -1,6 +1,6 @@
 {
   "name": "spdy-referrer-push",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SPDY server push based on referrer headers",
   "main": "index.js",
   "scripts": {

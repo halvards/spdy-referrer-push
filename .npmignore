@@ -2,3 +2,9 @@ examples/
 test/
 .git*
 .travis.yml
+*.iml
+*.ipr
+*.iws
+.idea
+build.gradle
+.gradle/
